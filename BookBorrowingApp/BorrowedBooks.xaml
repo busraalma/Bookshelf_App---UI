@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookBorrowingApp.BorrowedBooks">
+
+    <Grid  Padding="20" BackgroundColor="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Frame CornerRadius="10" BackgroundColor="CadetBlue" Grid.Row="0" Grid.RowSpan="3" Padding="0">
+            <StackLayout Padding="10">
+                <Grid>
+                    <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="https://kbimages1-a.akamaihd.net/2a758fb8-849e-464c-bb29-6f8c523231fa/353/569/90/False/to-kill-a-mockingbird-4.jpg"/>
+                    <StackLayout Grid.Column="1" Grid.ColumnSpan="2" Padding="10">
+                        <Label Text="To Kill a Mockingbird" FontSize="Large" TextColor="White"/>
+                        <Label Text="Harper Lee" FontSize="Medium" TextColor="White"/>
+                        <Label Text="Borrow Date :" TextColor="White"/>
+                        <Label Text="17.01.2022" FontSize="Large" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <Frame  CornerRadius="10" 
+                BackgroundColor="CadetBlue" 
+                Grid.Row="4" 
+                Grid.RowSpan="3" 
+                Padding="0">
+            <StackLayout Grid.Row="6" 
+                         Grid.RowSpan="2" 
+                         Padding="20">
+                <Label Text="Remaining Time :" 
+                       TextColor="White" 
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="14 days 18:35 hours" 
+                       FontSize="35" 
+                       TextColor="White"/>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

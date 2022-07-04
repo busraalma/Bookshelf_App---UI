@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookBorrowingApp.CreditCardPage"
+             NavigationPage.HasNavigationBar="false">
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0"
+        BackgroundColor="WhiteSmoke">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+
+        <BoxView 
+            Grid.Row="0"
+            BackgroundColor="LightSlateGray" />
+
+        <Label Text="BOOKSHELF" 
+               TextColor="AntiqueWhite" 
+               FontSize="30" 
+               FontAttributes="Bold" 
+               Grid.Row="0"
+               Padding="10"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+        <Label 
+            Grid.Row="1"
+            Text="CREDIT CARD"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
+
+        <StackLayout                
+            Grid.Row="2"
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            Padding="40"
+            Spacing="30">
+
+            <StackLayout>
+                <Entry x:Name="CardNumber"
+                       Placeholder="Card Number"
+                    Keyboard="Numeric" />
+            </StackLayout>
+
+            <StackLayout>
+                <Entry x:Name="Name"
+                       Placeholder="Cardholder Name"
+                    Keyboard="Numeric" />
+            </StackLayout>
+
+            <Grid HorizontalOptions="Center">
+                <Entry x:Name="ExpirationDate"
+                       Placeholder="Expiration Date"
+                    Keyboard="Numeric"
+                    WidthRequest="150" 
+                       Grid.Column="0"/>
+                <Entry x:Name="CVC"
+                       Placeholder="CVC"
+                    Keyboard="Numeric"
+                    WidthRequest="150" 
+                       Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="2"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Margin="10,0,0,15"
+            Spacing="15">
+            <Label Text="Back" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="Back" Tapped="Back_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <Button
+            Grid.Row="2"
+            Text="SIGNUP"
+            TextColor="White"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="15,10"
+            BackgroundColor="DarkSalmon" 
+            x:Name="RegisterButton"
+            Clicked="RegisterButton_Clicked"/>
+
+        <ActivityIndicator
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="White" />
+    </Grid>
+</ContentPage>

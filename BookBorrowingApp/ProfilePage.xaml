@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookBorrowingApp.ProfilePage"
+             NavigationPage.HasNavigationBar="false">
+
+    <Grid BackgroundColor="AntiqueWhite" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Frame CornerRadius="10" 
+               Padding="0"  
+               BackgroundColor="CadetBlue" 
+               Grid.Row="0" 
+               Grid.RowSpan="2">
+            <StackLayout Padding="20">
+                <Grid>
+                    <Frame CornerRadius="100" 
+                           Padding="0" 
+                           Grid.Column="0" 
+                           Grid.RowSpan="1" 
+                           Grid.Row="0" 
+                           IsClippedToBounds="True">
+                        <Image Source="https://frpnet.net/wp-content/uploads/2021/08/baby-groot-dancing.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <StackLayout Grid.Column="1" Grid.ColumnSpan="2" Padding="5">
+                        <Label Text="Büşra Alma" 
+                               VerticalOptions="Center" 
+                               FontSize="Title" 
+                               TextColor="White"/>
+                        <Label Text="busra@gmail.com" 
+                               VerticalOptions="Center" 
+                               FontSize="Medium" 
+                               TextColor="White"/>
+                        <Label Text="Address : Eskişehir / Turkey" 
+                               FontSize="Medium" 
+                               TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <Frame CornerRadius="10" 
+               Padding="0"  
+               BackgroundColor="CadetBlue" 
+               Grid.Row="2"
+               Grid.RowSpan="4">
+
+            <Grid Padding="20">
+                <Label Text="Donated Books" 
+                       TextColor="White" 
+                       FontSize="Large"
+                       Grid.ColumnSpan="3"/>
+                <Button Grid.Row="4" 
+                        Grid.Column="2"
+                        Text="Donate Book"
+                        BackgroundColor="White"
+                        TextColor="CadetBlue"
+                        CornerRadius="10"
+                        />
+            </Grid>
+
+        </Frame>
+
+        <Grid Padding="10" Grid.Row="6">
+            <Button Text="Edit Profile" 
+                        BackgroundColor="DarkSalmon" 
+                        TextColor="AntiqueWhite" 
+                        Grid.Column="0"
+                        CornerRadius="10"/>
+            <Button x:Name="LogoutButton"
+                        Clicked="LogoutButton_Clicked"
+                        Text="Logout"
+                        BackgroundColor="DarkSalmon" 
+                        TextColor="AntiqueWhite" 
+                        Grid.Column="1"
+                        CornerRadius="10"/>
+        </Grid>
+    </Grid>
+</ContentPage>

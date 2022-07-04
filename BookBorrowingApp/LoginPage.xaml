@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookBorrowingApp.LoginPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+       
+        <Image
+            Grid.Row="0" Grid.RowSpan="3"
+            Source="https://rtrfm.com.au/wp-content/uploads/2021/10/Bunch-Of-Books-Marriage-Relationships-Breakdown-816x459.png"
+             Aspect="Fill"/>
+
+        <Label Text="BOOKSHELF" 
+               TextColor="AntiqueWhite" 
+               FontSize="30" 
+               FontAttributes="Bold" 
+               Grid.Row="1"
+               Padding="10"
+               VerticalOptions="End"/>
+        
+        <Label 
+            Grid.Row="3"
+            Text="LOGIN"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
+
+        <StackLayout                
+            Grid.Row="4"
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            Spacing="15">
+
+                <StackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label 
+                    Text="Email:" />
+                    <Entry x:Name="MailEntry"
+                    Text="{ Binding Email }" 
+                    Keyboard="Email"
+                    WidthRequest="300" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label 
+                    Text="Password:" />
+                    <Entry x:Name="PasswordEntry"
+                    Text="{ Binding Password }"
+                    WidthRequest="300"
+                    IsPassword="True" />
+                </StackLayout>
+                <StackLayout>
+                    <Label x:Name="label1" TextColor="PaleVioletRed"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout
+            Grid.Row="4"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Margin="10,0,0,15"
+            Spacing="15">
+                <Label Text="Need an Account?" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="RegisterButton_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            </StackLayout>
+            <Button
+            Grid.Row="4"
+            Text="LOGIN"
+            TextColor="White"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="15,10"
+            BackgroundColor="CadetBlue"
+            x:Name="LoginButton"
+            Clicked="LoginButton_Clicked"/>
+
+        <ActivityIndicator
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="White"/>
+    </Grid>
+</ContentPage>

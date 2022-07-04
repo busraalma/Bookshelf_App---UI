@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookBorrowingApp.RegistrationPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+
+        <BoxView 
+            Grid.Row="0"
+            BackgroundColor="DarkSalmon" />
+
+        <Label Text="BOOKSHELF" 
+               TextColor="AntiqueWhite" 
+               FontSize="30" 
+               FontAttributes="Bold" 
+               Grid.Row="0"
+               Padding="10"
+               VerticalOptions="End"
+               HorizontalOptions="Center"/>
+        
+        <Label 
+            Grid.Row="1"
+            Text="SIGN UP"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
+
+        <StackLayout                
+            Grid.Row="2"
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            Spacing="5">
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Name:" />
+                <Entry x:Name="UserNameEntry"
+                    Text="{ Binding UserName }" 
+                    Keyboard="Text"
+                    WidthRequest="300" />
+            </StackLayout>
+            
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Email:" />
+                <Entry x:Name="UserMailEntry"
+                    Text="{ Binding UserMail }" 
+                    Keyboard="Email"
+                    WidthRequest="300" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Phone Number:" />
+                <Entry x:Name="UserPhoneNumberEntry"
+                    Text="{ Binding UserPhoneNumbber }" 
+                    Keyboard="Telephone"
+                    WidthRequest="300" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Address:" />
+                <Entry x:Name="UserAddressEntry"
+                    Text="{ Binding UserPhoneNumbber }" 
+                    Keyboard="Text"
+                    WidthRequest="300" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Password:" />
+                <Entry x:Name="UserPasswordEntry"
+                    Text="{ Binding UserPassword }"
+                    WidthRequest="300"
+                    IsPassword="True" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" Spacing="5">
+                <Label 
+                    Text="Confirm Password:" />
+                <Entry 
+                    Text="{ Binding UserPassword }"
+                    WidthRequest="300"
+                    IsPassword="True" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="4"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Margin="10,0,0,15"
+            Spacing="15">
+            <Label Text="Already have an Account?" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="Login" Tapped="Login_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <Button
+            Grid.Row="4"
+            Text="NEXT"
+            TextColor="White"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="15,10"
+            BackgroundColor="DarkSalmon" 
+            x:Name="NextButton"
+            Clicked="NextButton_Clicked"/>
+
+        <ActivityIndicator
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="White" />
+    </Grid>
+</ContentPage>
